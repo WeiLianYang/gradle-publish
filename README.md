@@ -27,3 +27,7 @@ licenseUrl=http://www.apache.org/licenses/LICENSE-2.0.txt
 allLicenses=["Apache-2.0"]
 ```
 
+## step3 : upload to Maven Central
+```groovy
+gradle uploadArchives
+```
