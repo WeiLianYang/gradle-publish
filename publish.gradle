@@ -44,7 +44,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 def PUBLISH_GROUP_ID = publishedGroupId
-def PUBLISH_ARTIFACT_ID = artifact
+def PUBLISH_ARTIFACT_ID = artifactId
 def PUBLISH_VERSION = android.defaultConfig.versionName
 
 afterEvaluate { project ->

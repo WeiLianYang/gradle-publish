@@ -1,9 +1,9 @@
 # gradle-publish
 
-## step1 : update module's build.gradle
+## step 1 : update module's build.gradle
 ```groovy
 ext {
-    artifact = ''
+    artifactId = ''
     libraryName = ''
     libraryDescription = ''
 }
@@ -11,23 +11,31 @@ ext {
 apply from: 'https://raw.github.com/WeiLianYang/gradle-publish/master/publish.gradle'
 ```
 
-## step2 : update gradle.properties
+## step 2 : update gradle.properties
 ```
 # config
-publishedGroupId=io.github.xxx // 发布的groupId
-siteUrl=https://github.com/xxx/xxx // 项目主页
-gitUrl=https://github.com/xxx/xxx.git // 项目git地址
+publishedGroupId=io.github.xxx
+siteUrl=https://github.com/xxx/xxx // Project home page
+gitUrl=https://github.com/xxx/xxx.git // Project git address
 # developer
-developerId=xxx // 开发者id，最好是申请sonatype的fullname
-developerName=xxx // 开发者名称
-developerEmail=xxx@xxx.com // 开发者email，最好是申请sonatype的email
+developerId=xxx // sonatype fullname
+developerName=xxx // sonatype name
+developerEmail=xxx@xxx.com // Developer email, preferably Sonatype email
 # license
 licenseName=The Apache License, Version 2.0
 licenseUrl=http://www.apache.org/licenses/LICENSE-2.0.txt
 allLicenses=["Apache-2.0"]
+
+# mavenCentral config data
+signing.keyId=The last 8 bits of GPG certificate fingerprint
+signing.password=GPG password
+signing.secretKeyRingFile=GPG certificate path
+# sonatype account
+ossrhUsername=
+ossrhPassword=
 ```
 
-## step3 : upload to Maven Central
+## step 3 : upload to Maven Central
 ```groovy
 gradle uploadArchives
 ```
