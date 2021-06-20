@@ -26,6 +26,12 @@ licenseName=The Apache License, Version 2.0
 licenseUrl=http://www.apache.org/licenses/LICENSE-2.0.txt
 allLicenses=["Apache-2.0"]
 
+```
+
+
+## step 3 : Update your home gradle.properties
+You need to configure the username and password in the home gradle.properties. The location defaults to USER_HOME/.gradle/gradle.properties.
+```
 # mavenCentral config data
 signing.keyId=The last 8 bits of GPG certificate fingerprint
 signing.password=GPG password
@@ -35,7 +41,9 @@ ossrhUsername=
 ossrhPassword=
 ```
 
-## step 3 : upload to Maven Central
+> If you don't have a GPG certificate, create a new one by referring to the [documentation](https://central.sonatype.org/publish/requirements/gpg/)
+
+## step 4 : upload to Maven Central
 ```groovy
 gradle uploadArchives
 ```
