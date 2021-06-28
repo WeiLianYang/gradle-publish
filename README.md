@@ -9,6 +9,9 @@ ext {
 }
 
 apply from: 'https://raw.github.com/WeiLianYang/gradle-publish/master/publish.gradle'
+// If the GitHub address is not accessible, you can also use Gitee's address
+// apply from: 'https://gitee.com/yc_android/gradle-publish/raw/main/publish.gradle'
+
 ```
 
 ## step 2 : update gradle.properties
