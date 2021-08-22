@@ -9,9 +9,10 @@ if (project.hasProperty("android")) { // Android libraries
     task javadoc(type: Javadoc) {
         // https://github.com/novoda/bintray-release/issues/71
         excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
+        failOnError false
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-        options.addBooleanOption('Xdoclint:none', true)
+        options.addStringOption('Xdoclint:none', '-quiet')
         options.encoding = "utf-8"
         options.charSet = "utf-8"
     }
